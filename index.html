@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Community Portal</title>
+
+  <!-- Task 5: Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+
+  <!-- Task 1: Link external CSS file -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Task 1: Internal style tag -->
+  <style>
+    body {
+      background-color: #f0f4f8;
+      font-family: 'Poppins', Arial, sans-serif;
+    }
+  </style>
+
+</head>
+<body>
+
+<!-- Navigation -->
+<nav id="mainNav">
+  <a href="#home">Home</a>
+  <a href="#events">Events</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#bulletin">Bulletin</a>
+  <a href="#register">Register</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<main>
+
+  <!-- Task 1 inline + Task 3 ID selector -->
+  <div id="mainHeader">
+    <h1 style="color: red;">City Community Portal</h1>
+    <p>Your one-stop hub for local events and services.</p>
+  </div>
+
+  <!-- Home -->
+  <section id="home">
+    <h2>Welcome</h2>
+    <p class="description">
+      Stay connected with your local community.
+      Register for events and access city services — all in one place.
+    </p>
+  </section>
+
+  <!-- Events with eventCard class -->
+  <section id="events">
+    <h2>Upcoming Events</h2>
+
+    <div class="eventCard">
+      <h3>Tree Planting Drive</h3>
+      <p>Date: 15 January 2025 | Location: City Park</p>
+      <a href="#register" class="cta-button">Register Now</a>
+    </div>
+
+    <div class="eventCard">
+      <h3>Food Festival</h3>
+      <p>Date: 22 February 2025 | Location: Town Square</p>
+      <a href="#register" class="cta-button">Register Now</a>
+    </div>
+
+    <div class="eventCard">
+      <h3>Sports Day</h3>
+      <p>Date: 10 March 2025 | Location: Sports Complex</p>
+      <a href="#register" class="cta-button">Register Now</a>
+    </div>
+
+  </section>
+
+  <!-- Gallery Table -->
+  <section id="gallery">
+    <h2>Event Gallery</h2>
+    <table id="galleryTable">
+      <thead>
+        <tr>
+          <th>Event Name</th>
+          <th>Date</th>
+          <th>Location</th>
+          <th>Fee</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tree Planting Drive</td>
+          <td>15 Jan 2025</td>
+          <td>City Park</td>
+          <td>Free</td>
+        </tr>
+        <tr>
+          <td>Food Festival</td>
+          <td>22 Feb 2025</td>
+          <td>Town Square</td>
+          <td>Rs. 50</td>
+        </tr>
+        <tr>
+          <td>Sports Day</td>
+          <td>10 Mar 2025</td>
+          <td>Sports Complex</td>
+          <td>Rs. 100</td>
+        </tr>
+        <tr>
+          <td>Art Show</td>
+          <td>05 Apr 2025</td>
+          <td>Community Hall</td>
+          <td>Free</td>
+        </tr>
+        <tr>
+          <td>Health Camp</td>
+          <td>20 May 2025</td>
+          <td>City Hospital</td>
+          <td>Free</td>
+        </tr>
+        <tr>
+          <td>Music Night</td>
+          <td>15 Jun 2025</td>
+          <td>Amphitheatre</td>
+          <td>Rs. 200</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Bulletin - newspaper columns -->
+  <section id="bulletin">
+    <h2>Community Bulletin</h2>
+    <div class="newspaper">
+      <p>The city council has announced a new green initiative
+      this month. Residents are encouraged to plant at least
+      one tree in their neighbourhood before end of season.</p>
+
+      <p>The annual food festival will feature over 50 stalls
+      this year, showcasing cuisines from across the region.
+      Entry is open to all residents and their families.</p>
+
+      <p>Sports registrations are now open for the inter-ward
+      tournament. Teams of up to 11 members can register at
+      the community centre or online through this portal.</p>
+
+      <p>The health camp in May will offer free checkups and
+      blood tests. No prior appointment is needed. Visiting
+      doctors from the city hospital will be present.</p>
+    </div>
+  </section>
+
+  <!-- Registration Form -->
+  <section id="register">
+    <h2>Event Registration</h2>
+    <form id="regForm" onsubmit="showConfirmation(event)">
+
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" name="fullName"
+             placeholder="Enter your full name"
+             required autofocus>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email"
+             placeholder="you@example.com" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone"
+             placeholder="10-digit number"
+             onblur="validatePhone()">
+      <span class="error" id="phoneError"></span>
+
+      <label for="eventDate">Event Date</label>
+      <input type="date" id="eventDate" name="eventDate" required>
+
+      <label for="eventType">Event Type</label>
+      <select id="eventType" name="eventType"
+              onchange="showFee(this.value)">
+        <option value="">-- Select Event --</option>
+        <option value="100">Sports</option>
+        <option value="50">Cultural</option>
+        <option value="0">Educational</option>
+        <option value="200">Music</option>
+      </select>
+      <p id="feeDisplay"></p>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message"
+                placeholder="Any special requirements..."
+                rows="4"></textarea>
+
+      <button type="submit" class="cta-button">Register Now</button>
+      <output id="confirmMsg"></output>
+
+    </form>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <ul class="contactList">
+      <li>Email: cityportal@example.com</li>
+      <li>Phone: 1800-123-4567</li>
+      <li>Office: City Hall, Ground Floor</li>
+      <li>Hours: Mon to Fri, 9am to 5pm</li>
+    </ul>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer>
+  <p>2025 City Community Portal. All rights reserved.</p>
+</footer>
+
+<!-- JavaScript -->
+<script>
+
+  /* Show confirmation message on form submit */
+  function showConfirmation(event) {
+    event.preventDefault();
+    var name = document.getElementById('fullName').value;
+    document.getElementById('confirmMsg').value =
+      'Thank you ' + name + '! Registration successful.';
+  }
+
+  /* Validate phone number when user leaves the field */
+  function validatePhone() {
+    var phone = document.getElementById('phone').value;
+    var errorEl = document.getElementById('phoneError');
+    if (phone !== '' && !/^\d{10}$/.test(phone)) {
+      errorEl.textContent = 'Enter a valid 10-digit phone number.';
+    } else {
+      errorEl.textContent = '';
+    }
+  }
+
+  /* Show event fee when dropdown changes */
+  function showFee(fee) {
+    var display = document.getElementById('feeDisplay');
+    if (fee === '')       display.textContent = '';
+    else if (fee === '0') display.textContent = 'Fee: FREE';
+    else                  display.textContent = 'Fee: Rs. ' + fee;
+  }
+
+  /* DevTools practice - open F12 > Console to see this */
+  console.log('Page loaded. Open DevTools with F12.');
+
+</script>
+
+</body>
+</html>

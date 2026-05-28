@@ -1,0 +1,452 @@
+/* =============================================
+   styles.css - City Community Portal
+   External CSS file - Task 1
+   ============================================= */
+
+
+/* Task 3: Universal selector - resets all spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* -----------------------------------------------
+   Task 5: Body font and text settings
+----------------------------------------------- */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #222222;
+  /* Task 4: Background color as fallback */
+  background-color: #f0f4f8;
+}
+
+
+/* -----------------------------------------------
+   Task 3: ID selector - main banner
+   Task 4: Linear gradient background
+----------------------------------------------- */
+#mainHeader {
+  background: linear-gradient(to right, #003366, #0055aa);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#mainHeader h1 {
+  /* Task 5: font size, weight, transform */
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+#mainHeader p {
+  font-size: 16px;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+
+/* -----------------------------------------------
+   Task 6: Navigation styles and link pseudo-classes
+----------------------------------------------- */
+
+/* Navigation bar background */
+#mainNav {
+  background-color: #003366;
+  padding: 12px 20px;
+}
+
+/* Task 6: link pseudo-classes */
+#mainNav a:link {
+  color: white;
+  text-decoration: none;
+  margin-right: 18px;
+  font-size: 15px;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+#mainNav a:visited {
+  color: #ccddff;
+}
+
+#mainNav a:hover {
+  background-color: #0055aa;
+  color: white;
+}
+
+#mainNav a:active {
+  background-color: #ffcc00;
+  color: #003366;
+}
+
+
+/* -----------------------------------------------
+   Task 3: Element selector - styles all h2 tags
+----------------------------------------------- */
+h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 15px;
+}
+
+
+/* -----------------------------------------------
+   Task 3: Grouping selector - h3 and p together
+----------------------------------------------- */
+h3, p {
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #003366;
+}
+
+
+/* -----------------------------------------------
+   Section spacing
+----------------------------------------------- */
+section {
+  padding: 30px 20px;
+  border-bottom: 2px solid #cccccc;
+}
+
+/* Task 4: Gradient on section headings */
+section h2 {
+  display: inline-block;
+  background: linear-gradient(to right, #003366, #0077cc);
+  color: white;
+  padding: 5px 16px;
+  border-radius: 4px;
+  margin-bottom: 18px;
+}
+
+
+/* -----------------------------------------------
+   Task 5: Description paragraph styling
+----------------------------------------------- */
+.description {
+  font-size: 15px;
+  line-height: 1.9;
+  text-align: justify;
+  letter-spacing: 0.3px;
+  color: #444444;
+  max-width: 700px;
+}
+
+
+/* -----------------------------------------------
+   Task 3: Class selector - event card
+   Task 8: Box model - border, padding, margin
+----------------------------------------------- */
+.eventCard {
+  background-color: white;
+  /* Task 8: border */
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  /* Task 8: padding inside the card */
+  padding: 18px;
+  /* Task 8: margin outside the card */
+  margin: 14px 0;
+  max-width: 580px;
+}
+
+.eventCard h3 {
+  color: #003366;
+}
+
+.eventCard p {
+  color: #555555;
+  font-size: 14px;
+}
+
+
+/* -----------------------------------------------
+   Task 2: CTA Button - well commented CSS rule
+----------------------------------------------- */
+
+/* Style for the main call-to-action button */
+.cta-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 9px 20px;
+  /* Task 4: HEX color for background */
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Task 4: RGBA color on hover */
+.cta-button:hover {
+  background-color: rgba(0, 90, 200, 0.9);
+}
+
+
+/* -----------------------------------------------
+   Task 7: Table styling
+----------------------------------------------- */
+
+/* Events admin table */
+#galleryTable {
+  width: 100%;
+  /* Task 7: collapse borders */
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Task 7: table header */
+#galleryTable th {
+  background-color: #003366;
+  color: white;
+  padding: 11px;
+  /* Task 7: center align */
+  text-align: center;
+}
+
+/* Task 7: table data cells */
+#galleryTable td {
+  padding: 9px 12px;
+  text-align: center;
+  border: 1px solid #cccccc;
+}
+
+/* Task 7: zebra striping using nth-child */
+#galleryTable tbody tr:nth-child(even) {
+  background-color: #e8f0fe;
+}
+
+#galleryTable tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+#galleryTable tbody tr:hover {
+  background-color: #cce0ff;
+}
+
+
+/* -----------------------------------------------
+   Task 9: Multi-column newspaper layout
+----------------------------------------------- */
+
+/* Newspaper style bulletin */
+.newspaper {
+  column-count: 2;
+  column-gap: 30px;
+  column-rule: 1px solid gray;
+  font-size: 15px;
+  line-height: 1.8;
+  text-align: justify;
+  margin-top: 10px;
+}
+
+.newspaper p {
+  margin-bottom: 12px;
+}
+
+
+/* -----------------------------------------------
+   Task 8: Form styling with outline on focus
+----------------------------------------------- */
+
+/* Registration form box */
+form {
+  background-color: white;
+  padding: 22px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  max-width: 500px;
+  margin-top: 14px;
+}
+
+form label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #aaaaaa;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+/* Task 8: outline when field is focused */
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: 3px solid #007BFF;
+  outline-offset: 2px;
+}
+
+output {
+  display: block;
+  margin-top: 10px;
+  color: green;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+}
+
+#feeDisplay {
+  color: #003366;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+
+/* -----------------------------------------------
+   Task 6: Contact list - custom list styling
+----------------------------------------------- */
+
+/* Contact info list */
+.contactList {
+  /* Task 6: list-style-type */
+  list-style-type: square;
+  /* Task 6: list-style-position */
+  list-style-position: inside;
+  padding-left: 10px;
+}
+
+.contactList li {
+  /* Task 6: padding and margin on list items */
+  padding: 6px 0;
+  margin-bottom: 4px;
+  font-size: 15px;
+  color: #333333;
+  border-bottom: 1px dashed #cccccc;
+}
+
+
+/* -----------------------------------------------
+   Footer
+----------------------------------------------- */
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+
+/* -----------------------------------------------
+   Task 8: visibility hidden vs display none
+   Uncomment below lines to test the difference
+----------------------------------------------- */
+
+/* visibility hidden - element is hidden but space remains */
+/* .test-hidden { visibility: hidden; } */
+
+/* display none - element is fully removed, no space */
+/* .test-none { display: none; } */
+
+
+/* -----------------------------------------------
+   Task 10: Media Queries for Responsive Design
+----------------------------------------------- */
+
+/* For tablets and mobile - screen width below 768px */
+@media screen and (max-width: 768px) {
+
+  /* Stack nav links vertically */
+  #mainNav {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  #mainNav a:link {
+    display: block;
+    margin: 4px 0;
+    font-size: 14px;
+  }
+
+  /* Shrink the main heading */
+  #mainHeader h1 {
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+
+  /* Full width cards */
+  .eventCard {
+    max-width: 100%;
+  }
+
+  /* Single column bulletin on small screen */
+  .newspaper {
+    column-count: 1;
+  }
+
+  /* Smaller table text */
+  #galleryTable {
+    font-size: 12px;
+  }
+
+  /* Make table scrollable horizontally */
+  #galleryTable {
+    display: block;
+    overflow-x: auto;
+  }
+
+  /* Full width form */
+  form {
+    max-width: 100%;
+    padding: 14px;
+  }
+
+  /* Smaller body font */
+  body {
+    font-size: 14px;
+  }
+
+  /* Less padding on sections */
+  section {
+    padding: 20px 12px;
+  }
+
+}
+
+/* For small phones - screen width below 480px */
+@media screen and (max-width: 480px) {
+
+  #mainHeader h1 {
+    font-size: 18px;
+  }
+
+  #mainHeader p {
+    font-size: 13px;
+  }
+
+  /* Full width button on phone */
+  .cta-button {
+    width: 100%;
+    text-align: center;
+  }
+
+}
